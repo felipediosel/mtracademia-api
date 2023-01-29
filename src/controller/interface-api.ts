@@ -1,6 +1,7 @@
 import { Model } from 'sequelize-typescript'
+import { Request } from 'express';
 
 export default interface ControllerInterfaceApi {
 
-    getAll(): Promise<Model[]>;
+    getAll(res: Request | null): Promise<Model[]>;
 }

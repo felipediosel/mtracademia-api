@@ -22,7 +22,7 @@ export default class ModelContasReceberPagtos extends Model {
 
     @AllowNull(false)
     @Column({
-        type: DataType.DATE,
+        type: DataType.DATEONLY,
     })
     declare pagto_data: string
 

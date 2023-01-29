@@ -13,6 +13,12 @@ import ControllerEventoAcesso from './src/controller/evento-acesso';
 
 const api = <Express>express()
 
+const cors = require('cors');
+
+api.use(cors({
+  origin: '*' //`${process.env.ORIGIN_URL}`
+}));
+
 api.listen(4200, () => {
   console.log('Api listening on port 4200!')
 })
@@ -62,7 +68,7 @@ function getAll(req: Request, res: Response, Controller: ControllerInterfaceApi)
 
   database.connect()
     .then(() => {
-      Controller.getAll().then((result) => {
+      Controller.getAll(req).then((result) => {
         res.json(result)
       })
     })

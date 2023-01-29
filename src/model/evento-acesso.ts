@@ -16,7 +16,7 @@ export default class ModelEventoAcesso extends Model {
 
     @AllowNull(false)
     @Column({
-        type: DataType.DATE,
+        type: DataType.DATEONLY,
     })
     declare data: string
 

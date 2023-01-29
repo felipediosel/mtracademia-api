@@ -34,7 +34,7 @@ export default class ModelContasReceber extends Model {
 
     @AllowNull(false)
     @Column({
-        type: DataType.DATE,
+        type: DataType.DATEONLY,
     })
     declare vencimento: string
 
