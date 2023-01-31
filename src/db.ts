@@ -13,7 +13,17 @@ export class Database {
             host: process.env.DATABASE_HOST,
             port: process.env.DATABASE_PORT !== undefined ? parseInt(process.env.DATABASE_PORT) : 1433,
             dialect: 'mssql',
-            models: [__dirname + '/model']
+            models: [__dirname + '/model'],
+            dialectOptions: {
+                options: {
+                    enableArithAbort: false,
+                    cryptoCredentialsDetails: {
+                        minVersion: 'TLSv1'
+                    },
+                    encrypt: false,
+                    trustServerCertificate: true
+                }
+            }
         })
     }
 

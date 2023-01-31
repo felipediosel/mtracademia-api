@@ -15,9 +15,7 @@ const api = <Express>express()
 
 const cors = require('cors');
 
-api.use(cors({
-  origin: '*' //`${process.env.ORIGIN_URL}`
-}));
+api.use(cors());
 
 api.listen(4200, () => {
   console.log('Api listening on port 4200!')
